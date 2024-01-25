@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6acilyidkn17"]
+
+[ext_resource type="Script" path="res://scripts/ending.gd" id="1_grky3"]
+[ext_resource type="Texture2D" uid="uid://bouqtsw0gtool" path="res://Assets/6467671.jpg" id="2_y5k2x"]
+
+[node name="Won" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_grky3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Return" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 431.0
+offset_top = 507.0
+offset_right = -442.0
+offset_bottom = -127.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Return to main menu"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_y5k2x")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 145.0
+offset_right = 893.0
+offset_bottom = 282.0
+theme_override_font_sizes/font_size = 40
+text = "YOU WON!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]

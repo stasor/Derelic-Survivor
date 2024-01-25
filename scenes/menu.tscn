@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbw41jq0kl0l1"]
+
+[ext_resource type="Script" path="res://scripts/Menu.gd" id="2_7id73"]
+[ext_resource type="Texture2D" uid="uid://bouqtsw0gtool" path="res://Assets/6467671.jpg" id="2_w27li"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 428.0
+offset_top = 105.0
+offset_right = 835.0
+offset_bottom = 191.0
+text = "Play"
+script = ExtResource("2_7id73")
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 436.0
+offset_top = 376.0
+offset_right = -437.0
+offset_bottom = -258.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+script = ExtResource("2_7id73")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_w27li")
+expand_mode = 1
+stretch_mode = 6
+
+[connection signal="pressed" from="Play" to="Play" method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="Quit" method="_on_quit_pressed"]

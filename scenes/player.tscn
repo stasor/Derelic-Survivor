@@ -1,0 +1,369 @@
+[gd_scene load_steps=34 format=3 uid="uid://b4llw33ci0vio"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_p2508"]
+[ext_resource type="Texture2D" uid="uid://diedk2ues5kwb" path="res://Assets/indigo_0.png" id="2_lxc1d"]
+[ext_resource type="Texture2D" uid="uid://bouqtsw0gtool" path="res://Assets/6467671.jpg" id="3_32pos"]
+[ext_resource type="Script" path="res://scripts/PlayerInventory.gd" id="4_sqqi1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y32la"]
+size = Vector2(16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aiart"]
+atlas = ExtResource("2_lxc1d")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6scv"]
+atlas = ExtResource("2_lxc1d")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4y8q"]
+atlas = ExtResource("2_lxc1d")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nim0"]
+atlas = ExtResource("2_lxc1d")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1afky"]
+atlas = ExtResource("2_lxc1d")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4477"]
+atlas = ExtResource("2_lxc1d")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj4ww"]
+atlas = ExtResource("2_lxc1d")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojc4y"]
+atlas = ExtResource("2_lxc1d")
+region = Rect2(384, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3svpp"]
+atlas = ExtResource("2_lxc1d")
+region = Rect2(416, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2riia"]
+atlas = ExtResource("2_lxc1d")
+region = Rect2(448, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2y1d"]
+atlas = ExtResource("2_lxc1d")
+region = Rect2(480, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56k3q"]
+atlas = ExtResource("2_lxc1d")
+region = Rect2(384, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkblx"]
+atlas = ExtResource("2_lxc1d")
+region = Rect2(416, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ir3m"]
+atlas = ExtResource("2_lxc1d")
+region = Rect2(448, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65aji"]
+atlas = ExtResource("2_lxc1d")
+region = Rect2(480, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xbs2"]
+atlas = ExtResource("2_lxc1d")
+region = Rect2(480, 416, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7alto"]
+atlas = ExtResource("2_lxc1d")
+region = Rect2(384, 416, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_277dy"]
+atlas = ExtResource("2_lxc1d")
+region = Rect2(416, 416, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rg7s1"]
+atlas = ExtResource("2_lxc1d")
+region = Rect2(448, 416, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51vfb"]
+atlas = ExtResource("2_lxc1d")
+region = Rect2(384, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4aij"]
+atlas = ExtResource("2_lxc1d")
+region = Rect2(416, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uftsg"]
+atlas = ExtResource("2_lxc1d")
+region = Rect2(448, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0qer"]
+atlas = ExtResource("2_lxc1d")
+region = Rect2(480, 288, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t7pe2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aiart")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6scv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4y8q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nim0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1afky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4477")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dj4ww")
+}],
+"loop": false,
+"name": &"sit_down",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojc4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3svpp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2riia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2y1d")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56k3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkblx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ir3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65aji")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xbs2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7alto")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_277dy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rg7s1")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51vfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4aij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uftsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0qer")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_i8n2p"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_cot2t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5q8ga"]
+radius = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j1a4m"]
+radius = 34.0588
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 2
+script = ExtResource("1_p2508")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_y32la")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_t7pe2")
+animation = &"sit_down"
+frame = 6
+frame_progress = 1.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="GUI" type="Control" parent="Camera2D"]
+z_as_relative = false
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Background" type="TextureRect" parent="Camera2D/GUI"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_32pos")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TopLeft" type="HBoxContainer" parent="Camera2D/GUI"]
+layout_mode = 1
+offset_left = 22.0
+offset_top = 17.0
+offset_right = 134.0
+offset_bottom = 75.0
+
+[node name="Labels" type="VBoxContainer" parent="Camera2D/GUI/TopLeft"]
+visible = false
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/GUI/TopLeft/Labels"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_i8n2p")
+
+[node name="TextureRect2" type="TextureRect" parent="Camera2D/GUI/TopLeft/Labels"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = SubResource("PlaceholderTexture2D_cot2t")
+
+[node name="Bars" type="VBoxContainer" parent="Camera2D/GUI/TopLeft"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Hunger" type="ProgressBar" parent="Camera2D/GUI/TopLeft/Bars"]
+layout_mode = 2
+tooltip_text = "Hunger"
+max_value = 10.0
+step = 1.0
+value = 5.0
+
+[node name="Thirst" type="ProgressBar" parent="Camera2D/GUI/TopLeft/Bars"]
+layout_mode = 2
+tooltip_text = "Thirst"
+max_value = 10.0
+step = 1.0
+value = 8.0
+
+[node name="TopRight" type="HBoxContainer" parent="Camera2D/GUI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -157.0
+offset_top = 22.0
+offset_right = -13.0
+offset_bottom = 72.0
+grow_horizontal = 0
+
+[node name="PlayerInventory" type="Control" parent="Camera2D/GUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -82.0
+offset_top = -63.0
+offset_right = 83.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("4_sqqi1")
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemBoxes" type="HBoxContainer" parent="Camera2D/GUI/PlayerInventory"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ThirstTimer" type="Timer" parent="Camera2D/GUI"]
+wait_time = 5.0
+autostart = true
+
+[node name="HungerTimer" type="Timer" parent="Camera2D/GUI"]
+wait_time = 9.0
+autostart = true
+
+[node name="ShipDestroyedTimer" type="Timer" parent="Camera2D/GUI"]
+wait_time = 600.0
+one_shot = true
+autostart = true
+
+[node name="PickUpArea" type="Area2D" parent="."]
+monitorable = false
+
+[node name="Range" type="CollisionShape2D" parent="PickUpArea"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_5q8ga")
+debug_color = Color(0.517647, 0.509804, 0.478431, 0.419608)
+
+[node name="InteractArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Range" type="CollisionShape2D" parent="InteractArea"]
+shape = SubResource("CircleShape2D_j1a4m")
+
+[connection signal="value_changed" from="Camera2D/GUI/TopLeft/Bars/Hunger" to="." method="_on_hunger_value_changed"]
+[connection signal="value_changed" from="Camera2D/GUI/TopLeft/Bars/Thirst" to="." method="_on_thirst_value_changed"]
+[connection signal="timeout" from="Camera2D/GUI/ThirstTimer" to="." method="_on_thirst_timer_timeout"]
+[connection signal="timeout" from="Camera2D/GUI/HungerTimer" to="." method="_on_hunger_timer_timeout"]
+[connection signal="timeout" from="Camera2D/GUI/ShipDestroyedTimer" to="." method="_on_ship_destroyed_timer_timeout"]
