@@ -1,12 +1,11 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bj53v1wywlxgb"]
 
 [ext_resource type="Script" path="res://Inventory/Item.gd" id="1_t7xtc"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_npt8h"]
+[ext_resource type="Texture2D" uid="uid://022mjvlkme0i" path="res://Assets/power_strip_typeF.png" id="2_x1ukj"]
 
 [resource]
 script = ExtResource("1_t7xtc")
 name = ""
-texture = SubResource("PlaceholderTexture2D_npt8h")
+texture = ExtResource("2_x1ukj")
 type = 2
 amount = 0

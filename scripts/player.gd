@@ -1,11 +1,5 @@
 extends CharacterBody2D
 
-#TODO time till lose
-#TODO Find assets for items and shuttle
-#TODO lose menu
-#TODO win menu
-#TODO random item generation
-
 @export var inventory:Inventory
 
 const SPEED = 130.0
@@ -17,18 +11,19 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var thirstBar:ProgressBar = get_node("Camera2D/GUI/TopLeft/Bars/Thirst")
 @onready var pickUpArea:Area2D = $PickUpArea
 @onready var interactArea:Area2D = $InteractArea
-#const WorldItemScene = preload("res://scenes/item.tscn")
-#const WorldItem = preload("res://scripts/worldItemScene.gd")
-var anim = null
-
-@onready var start_time = Time
+const ITEM_SCENE = preload("res://scenes/item.tscn")
+@onready var ship_destroyed_timer = $Camera2D/GUI/ShipDestroyedTimer
+@onready var timer = $Camera2D/GUI/TopRight/Timer
+#@onready var start_time = Time
 
 @onready var player_inventory = $Camera2D/GUI/PlayerInventory
+var anim = null
 
 func _ready():
 	player_inventory.set_inventory(inventory)
 	anim = get_node("AnimatedSprite2D")
 	Animation(Vector2(0,0))
+	timer.max_value = ship_destroyed_timer.wait_time
 
 # called roughly a the same time, from  per frame call for physics processing
 func _physics_process(delta): 
@@ -36,6 +31,7 @@ func _physics_process(delta):
 	velocity = direction * SPEED
 	move_and_slide()
 	Animation(direction)
+	timer.value = ship_destroyed_timer.time_left
 
 # the direction of 2d movement based on key input
 func Get_direction() -> Vector2:
@@ -82,6 +78,21 @@ func Nearest_Item(list:Array[Area2D]) -> Area2D:
 	
 	return minDistanceObject
 
+func drop_item(itemNum:int):
+	var item:Item
+	if inventory.slots[itemNum] != null:
+		item = inventory.slots[itemNum].item
+	else: return
+	
+	var drop = ITEM_SCENE.instantiate()
+	drop.item = item
+	
+	inventory.slots[itemNum] = null
+	player_inventory.set_inventory(inventory)
+	
+	drop.set_position(self.get_position())
+	get_parent().add_child(drop)
+
 func useItem(itemNum:int):
 	var item:Item
 	if inventory.slots[itemNum] != null:
@@ -103,7 +114,7 @@ func useItem(itemNum:int):
 	player_inventory.set_inventory(inventory)
 
 func _input(event):
-	if not event is InputEventKey:
+	if not event is InputEventKey or not event is InputEventWithModifiers:
 		return
 	
 	if event.is_action_pressed("pickup_item"):
@@ -120,8 +131,14 @@ func _input(event):
 			
 	
 	if  range(KEY_1, OS.find_keycode_from_string(str(inventory.slots.size())) +1).has(event.keycode): #Easiest way to get if a key the size of the inventory is presed e.g. 1 to 3
+		if event is InputEventWithModifiers:
+			if event.shift_pressed:
+				drop_item(event.keycode - KEY_1) # transform keycode to int from 0 
+				return
+		
 		useItem(event.keycode - KEY_1) # transform keycode to int from 0 
-	
+		return
+
 
 func Drink(amount:int):
 	thirstBar.value += amount

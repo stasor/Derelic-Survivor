@@ -1,9 +1,10 @@
-[gd_scene load_steps=34 format=3 uid="uid://b4llw33ci0vio"]
+[gd_scene load_steps=35 format=3 uid="uid://b4llw33ci0vio"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_p2508"]
 [ext_resource type="Texture2D" uid="uid://diedk2ues5kwb" path="res://Assets/indigo_0.png" id="2_lxc1d"]
 [ext_resource type="Texture2D" uid="uid://bouqtsw0gtool" path="res://Assets/6467671.jpg" id="3_32pos"]
 [ext_resource type="Script" path="res://scripts/PlayerInventory.gd" id="4_sqqi1"]
+[ext_resource type="Texture2D" uid="uid://ddgey2lddsehc" path="res://Assets/clock_3379144.png" id="4_t3hnc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y32la"]
 size = Vector2(16, 15)
@@ -298,11 +299,19 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -157.0
-offset_top = 22.0
-offset_right = -13.0
-offset_bottom = 72.0
+offset_left = -91.0
+offset_top = 17.0
+offset_right = 421.0
+offset_bottom = 529.0
 grow_horizontal = 0
+scale = Vector2(0.15, 0.15)
+
+[node name="Timer" type="TextureProgressBar" parent="Camera2D/GUI/TopRight"]
+layout_mode = 2
+step = 0.001
+value = 100.0
+fill_mode = 5
+texture_progress = ExtResource("4_t3hnc")
 
 [node name="PlayerInventory" type="Control" parent="Camera2D/GUI"]
 layout_mode = 1

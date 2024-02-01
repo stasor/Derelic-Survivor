@@ -10,7 +10,11 @@ https://pop-shop-packs.itch.io/cats-pixel-asset-pack
 ship tiles
 https://aske4.itch.io/free-space-station
 
-food
+items
 https://ghostpixxells.itch.io/pixel-mart
 
+escape shuttle
+https://opengameart.org/content/some-top-down-spaceships
 
+clock
+https://www.freepik.com/icon/clock_3379144#fromView=search&term=analog+clock&track=ais&page=1&position=82&uuid=d9de9265-2f0d-4b57-9c11-dbeda23e9857
